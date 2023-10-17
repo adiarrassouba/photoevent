@@ -1,0 +1,669 @@
+/*
+Theme Name: photoevent
+Theme URI: http://photographie-event.local/
+Author: Assetou D
+Author URI: 
+Description: Thème personnalisé pour site de photographie
+Version: 1.0
+*/
+
+
+/* poppins-300 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 300;
+  src: url('../fonts/poppins-v20-latin-300.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* poppins-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/poppins-v20-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* space-mono-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Space Mono';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/space-mono-v13-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+
+/* header */
+.header-container {display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 4px 120px; 
+} 
+ a {
+    text-decoration: none;
+    color: black;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    text-transform: uppercase;
+    margin: 20px;
+  }
+ a:hover { font-weight: 800;}
+.logo {
+    width: 220px;
+    height: 100%;
+  }
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+}
+
+li {
+    display: flex;
+    align-items: center;
+}
+
+html {
+    margin: auto;
+}
+
+img {
+    max-width: 100%;
+    object-fit: contain;
+}
+
+
+
+
+#footer {
+  display: flex;
+  justify-content: center;
+  border-top: 1px solid black;
+}
+
+#footer ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+  display: flex;
+  padding: 0;
+}
+
+#footer ul > li a {
+  text-decoration: none;
+  color: black;
+
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  text-transform: uppercase;
+  margin: 20px;
+}
+
+#footer ul > li a:hover {
+  font-weight: 700;
+}
+
+#footer ul > li p {
+  color: black;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  text-transform: uppercase;
+  margin: 0 20px;
+}
+
+
+
+/* MODAL */
+/* The Modal (background) */
+.modal {
+    display: none;  
+    /* border: 1px solid black; */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    /*padding-top: 100px;  Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content */
+  .modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 50%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+    margin-top: 100px;
+  }
+  
+  /* Add Animation */
+  @-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0} 
+    to {top:0; opacity:1}
+  }
+  
+  @keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+  }
+  
+  /* The Close Button */
+  .close {
+    color: #2f2f2f;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .modal-header {
+    padding: 2px 16px;
+    /* background-color: #5cb85c; */
+    /* color: white; */
+  }
+  
+  .modal-body {padding: 2px 16px;
+  display: flex;
+justify-content: center;}
+  
+  .modal-footer {
+    padding: 2px 16px;
+    /* background-color: #5cb85c; */
+    /* color: white; */
+  }
+  .wpcf7-text { width: 263px;
+    height: 40px;
+    border-radius: 8px;
+    
+  }
+.wpcf7-textarea { width: 263px;
+height: 210px;
+border-radius: 8px;
+}
+.wpcf7-submit {
+  width: 263px;
+  height: 50px;
+  background-color: #D8D8D8;
+  font-family: space mono;
+  font-weight: 400;
+  font-size: 12px;
+}
+ label {
+  font-family: poppins;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* version mobile */
+@media (max-width: 750px) {
+
+  #footer ul { 
+    display: flex;
+    flex-direction: column;
+  }
+
+ }
+
+ /* css single */
+ .info-pic {
+  font-family: 'space-mono';
+  letter-spacing: 0.1em;
+  margin: 40px 10%;
+  height: 52.75em;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  min-height: 397px;
+}
+.info {
+  min-width: 50%;
+  margin-right: 3%;
+  border-bottom: 1px solid;
+}
+.part {
+  flex: 1;
+}
+.title-pic {
+  font-family: 'space-mono-italic';
+  font-size: 4.1em;
+  font-weight: 400;
+  line-height: 58px;
+  width: 450px;
+  padding-top: 30px;
+}
+
+.info-margin {
+  margin: 10px 0px;
+}
+.ref {
+  margin-top: -30px;
+}
+.year {
+  padding-bottom: 30px;
+}
+.gallery-img {
+  height: 100%; 
+  width: 100%;
+  min-height: 397px;
+}
+
+/* photo apparentée */
+
+.gallery {  
+  margin: 0 10%;
+ display: flex;
+  flex-direction: column;} *
+ 
+  .gallery-container { /*used for home page too */
+    max-width: 1250px;
+    padding: 20px 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 20px; 
+    margin: auto;/* Écart horizontal */
+    position: relative;
+}
+
+ .you-may-also-like {
+  font-family: 'space-mono';
+  font-weight: 400;
+  font-size: 18px;
+  letter-spacing: 0.1em;
+  line-height: 26.66px;
+  padding-top: 60px;
+  padding-bottom: 20px;
+} 
+
+.pic-container {
+  display: flex;
+  justify-content: center;
+}
+.button-container { 
+  margin: 0 10%;
+  display: flex;
+  justify-content: center;
+}
+
+.all-pics-button {
+  margin-top: 2.5em;
+  margin-bottom: 3em;
+}
+.button {
+  background-color: #D8D8D8;
+  border: transparent;
+  border-radius: 2px;
+  font-family: 'space-mono';
+  font-size: 14px;
+  box-shadow: 0 2px 1px 0 rgba(0, 0, 0, 0.0004);
+  padding: 8px 15px 8px 15px;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 272px;
+  height: 50px;
+  transition: background-color 0.5s ease-in-out;
+}
+.gallery-pic {
+  height: 100%; 
+  width: 100%;
+}
+.resize-pic  {
+  position: relative;   
+}
+/* miniature */
+
+.is-interested {
+  height: 118px;
+  margin: 0 10%;
+  border-bottom: 1px solid black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: -40px;
+}
+.is-interested-text {
+  font-family: poppins;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 21px;
+  padding-right: 9.3em;
+}
+.is-interested-text-button {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.is-interested-slider {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: flex-end;
+}
+.is-interested-arrows {
+  width: 135px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.previous-img, .next-img {
+  width: 108px;
+  height: 80px;
+}
+
+@media all and (max-width: 768px) {
+  .info-pic {
+      flex-direction: column-reverse;
+      align-items: flex-start;
+      height: inherit;
+  }
+
+  .info {
+      border: none;
+  }
+
+  .pic-container {
+      display: flex;
+      justify-content: center;
+  }
+
+  .title-pic {
+      padding-top: inherit;
+  }
+
+  .is-interested-slider {
+      display: none;
+  }
+
+  .is-interested-text-button {
+      flex-direction: column;
+  } 
+
+  .is-interested-text {
+      padding-left: 7.65vh;
+  }
+
+  .is-interested {
+      margin: 0;
+      border-top: 1px solid black;
+      justify-content: center;
+      padding-bottom: 15px;
+  }
+
+  /* .gallery-container {
+     display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    
+  } */
+
+  .you-may-also-like {
+      text-align: center;
+      padding-top: 20px;
+      padding-bottom: 0px;
+  }
+
+  .button-container {
+      display: none;
+  }
+}
+@media all and (max-width: 425px) {
+  .title-pic {
+      width: inherit;
+      font-size: 3em;
+  }
+  .info-margin {
+      font-size: 0.875em;
+  }
+}
+
+@media all and (max-width: 375px) {
+  .is-interested-text {
+     font-size: 0.813em;
+     padding-left: 5vh;
+  }
+}
+
+@media all and (max-width: 320px) {
+  .is-interested-text {
+     font-size: 0.688em;
+     padding-left: inherit;
+  }
+
+  .is-interested-text-button .button {
+      width: 263px;
+  }
+}
+
+
+
+/* MENU BURGER */
+
+.nav {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.nav > .nav-header {
+  flex: 0.95;
+  padding-left: 1rem;
+}
+.nav > .nav-header > .nav-title {
+  font-size: 22px;
+}
+.nav > .nav-list {
+  display: flex;
+  gap: 2rem;
+}
+.nav > .nav-list > li {
+  list-style-type: none;
+}
+.nav > .nav-list > li a {
+  text-decoration: none;
+  cursor: pointer;
+}
+.nav > #nav-check {
+    display: none;
+}
+@media (max-width: 750px) {
+  .nav {
+    padding: 1rem;
+  }
+  .nav > .nav-btn {
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding-top: 0.2rem;
+    width: 70px;
+    height: 70px;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .burger-menu-logo {
+    background: url('./photos/burger.png');
+  }
+
+  .cross-menu-logo {
+    background: url('./photos/cross.png');
+  }
+
+  .opened-nav-list {
+    height: calc(100vh - 50px) !important;
+  }
+  .closed-nav-list {
+    height: 0px !important;
+  }
+
+  .nav > .nav-list {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    height: 0;
+    transition: all 0.3s ease-in;
+    top: 40px;
+    left: 0;
+    overflow: hidden;
+    background: #E00000;
+
+  }
+  .nav > .nav-list > li {
+    width: 100%;
+    margin-top: 1.5rem;
+    justify-content: center;
+  }
+  .nav > .nav-list > li a {
+    color: #fff;
+    font-family: space mono;
+    font-weight: 400;
+    font-size: 44px;
+  }
+  
+}
+
+/* hero */
+.site-title {
+  font-family: 'space-mono-bolditalic';
+  font-weight: 700;
+  line-height: 142.18px;
+  font-size: 6em;
+  color: transparent;
+  -webkit-text-stroke: 2px;
+  -webkit-text-stroke-color: white;
+  position: absolute;
+}
+
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.slider {
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+}
+
+.slider img {
+  width: 2544px !important;
+  max-height: 99.66vh; /* 750px */
+  display: none;
+  object-fit: cover;
+}
+
+.slider img:first-child {
+  display: block;
+}
+
+/* galerie */
+/* .gallery-container  {
+  height: 32.4vw;
+  position: relative;
+  max-height: 550px;
+  max-width: 550px;
+} */
+
+.gallery-container img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+}
+
+.button-container-home { 
+  margin: 30px 10%;
+  display: flex;
+  justify-content: center;
+}
+
+/* filter */
+.filters-container {
+  width: 94%;
+  padding-bottom: 1.5em;
+  padding-top: 6em;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.category-format-filters {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.formats-filter {
+  padding-left: 30px;
+}
+.filter-column {
+  display: flex;
+  flex-direction: column;
+}
+
+/* photo-block icone eye */
+.gallery-icons-hover .icon-eye {
+  position: absolute;
+  top: 55%;
+  left: 5%;
+}
+.gallery-data {
+  position: relative;
+  top: 5px;
+  right: 2px;
+  color: white;
+  padding: 0 1em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.gallery-category a {
+  color: inherit;
+  text-decoration: none;
+  cursor: default;
+  pointer-events: none;
+  font-family: "space-mono";
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  font-size: 0.875em;
+  line-height: 21px;
+}
+
+.gallery-reference {
+ font-family: "poppins";
+ font-size: 0.875em;
+ line-height: 21px;
+ font-weight: 500;
+}
+
+.resize-pic:hover .icon-eye, .resize-pic:hover .icon-full, 
+.pic-container:hover .icon-eye, .pic-container:hover .icon-full,
+.resize-pic:hover {
+    opacity: 1;
+}
