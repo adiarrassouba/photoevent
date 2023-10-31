@@ -12,10 +12,14 @@ function register_my_menu(){
     wp_register_script( 'jQuery', 'https://code.jquery.com/jquery-3.7.1.min.js', null, null, true );
      wp_register_script( 'script-js', get_stylesheet_directory_uri() . '/script.js', null, null, true);
      wp_register_script( 'pagination-js', get_stylesheet_directory_uri() . '/pagination.js', null, null, true);
+     wp_register_script( 'single-js', get_stylesheet_directory_uri() . '/single.js', null, null, true);
+     wp_register_script( 'lightbox_script-js', get_stylesheet_directory_uri() . '/lightbox_script.js', null, null, true);
 
      wp_enqueue_script('jQuery');
      wp_enqueue_script('script-js');
      wp_enqueue_script('pagination-js');
+     wp_enqueue_script('lightbox_script-js');
+     wp_enqueue_script('single-js');
  }
 
 add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
@@ -23,6 +27,7 @@ function theme_enqueue_styles() {
     wp_enqueue_style( 'style', get_stylesheet_directory_uri() . '/style.css' ); 
 }
 
+// fonction pour les image galerie
 function show_gallery($my_query)
 {
     if ($my_query->have_posts()){

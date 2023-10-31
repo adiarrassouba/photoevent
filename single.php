@@ -39,7 +39,7 @@ while ( have_posts() ) :
                 <p class="info-margin year">ANNÉE : <?php echo get_the_date('Y'); ?></p>
             </li>
         </div>
-		<div class="gallery-img part pic-container">
+		<div class="gallery-img-single part pic-container">
 		<img class="" src="<?php echo get_field('url-photo'); ?>" />
         </div>
         
@@ -125,47 +125,49 @@ $nextPhoto = get_next_post();
 
  <!-- photo apparentée -->
  
- <div class="gallery">
+<div class="gallery">
     <h3 class="you-may-also-like">VOUS AIMEREZ AUSSI</h3>
     <div class="gallery-container">
 
-<?php
-$category = strip_tags(get_the_term_list($post->ID, 'categorie'));
-$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-$morePics = new WP_Query(array(
-	'post_type' => 'photo',
-	'post__not_in' => array(get_the_ID()),
-	'orderby' => 'date',
-	'order' => 'DESC',
-	'posts_per_page' => 2,
-	'paged' => $paged,
-	'tax_query' => array(
-		array(
-			'taxonomy' => 'categorie',
-			'field' => 'slug',
-			'terms' => $category,
-		),
-	),
+        <?php
+        $category = strip_tags(get_the_term_list($post->ID, 'categorie'));
+        $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+        $morePics = new WP_Query(array(
+            'post_type' => 'photo',
+            'post__not_in' => array(get_the_ID()),
+            'orderby' => 'date',
+            'order' => 'DESC',
+            'posts_per_page' => 2,
+            'paged' => $paged,
+            'tax_query' => array(
+                array(
+                    'taxonomy' => 'categorie',
+                    'field' => 'slug',
+                    'terms' => $category,
+                ),
+            ),
 
-));
+        ));
 
-$countPictures = $morePics->post_count;
-		if ($countPictures > 0) {
-			show_gallery($morePics);
-		} else {
-			echo '<p>Il n\'y a pas d\'autres photos dans cette catégorie.</p>';
-		}
+        $countPictures = $morePics->post_count;
+            if ($countPictures > 0) {
+                show_gallery($morePics);
+            } else {
+                echo '<p>Il n\'y a pas d\'autres photos dans cette catégorie.</p>';
+            }
 
-// show_gallery($morePics);
-?>
-</div>
+
+            ?>
+    </div>
 </div>
 
 <div class="button-container">
-    <a href="<?php echo home_url('/'); ?>">
+     <a href="<?php echo home_url('/'); ?>">
         <button class="button all-pics-button">Toutes les photos</button>
     </a>
 </div>
+
+<?php get_template_part( 'template_parts/lightbox' ); ?>
 
 <?php get_footer(); ?>
 

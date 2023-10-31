@@ -48,7 +48,7 @@
     <div class="filters-container">
         <!-- Fonction pour récupéter et afficher les catégories -->
 
-        <?php function showCategories($taxonomy)
+        <!-- <?php function showCategories($taxonomy)
         {
             if ($terms = get_terms(array(
                 'taxonomy' => $taxonomy,
@@ -60,7 +60,7 @@
             }
         }
 
-        ?>
+        ?> -->
 
         <div class="category-format-filters">
 
@@ -69,7 +69,7 @@
             <div class="categories-filter">
                 <form class="filter-column">
                     <select id="categories">
-                        <option value="all">CATÉGORIES</option>
+                        <option value="all" class="oui">CATÉGORIES</option>
                         <?php
                         $categories = get_terms(array(
                             "taxonomy" => "categorie", // as in CPT UI
@@ -119,7 +119,7 @@
     </div>
 
 
-
+    <?php get_template_part( 'template_parts/lightbox' ); ?>
 
 <!-- images gallerie  -->
 
@@ -143,4 +143,4 @@
     <div class="button-container-home">
         <a id="load-more" data-current-index="1" href="#!"><button class="button">Charger plus</button></a>
     </div>
- </section>
+</section>

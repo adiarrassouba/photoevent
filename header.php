@@ -21,11 +21,7 @@
                 </div>
             </div>
             <div class="nav-btn burger-menu-logo">
-                <!-- <label for="nav-check">
-                <span></span>
-                <span></span>
-                <span></span>
-                </label> -->
+                
             </div>
             
                 <?php wp_nav_menu([
@@ -35,6 +31,6 @@
                 ]); ?>
                 
         </nav>
-        </div>
+</div>
         <?php get_template_part( 'template_parts/modal' ); ?>
        
